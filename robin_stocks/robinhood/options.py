@@ -13,12 +13,13 @@ spinner = spinning_cursor()
 
 def write_spinner():
     """ Function to create a spinning cursor to tell user that the code is working on getting market data. """
-    if get_output()==sys.stdout:
-        marketString = 'Loading Market Data '
-        sys.stdout.write(marketString)
-        sys.stdout.write(next(spinner))
-        sys.stdout.flush()
-        sys.stdout.write('\b'*(len(marketString)+1))
+    # if get_output()==sys.stdout:
+    #     marketString = 'Loading Market Data '
+    #     sys.stdout.write(marketString)
+    #     sys.stdout.write(next(spinner))
+    #     sys.stdout.flush()
+    #     sys.stdout.write('\b'*(len(marketString)+1))
+    return
 
 @login_required
 def get_aggregate_positions(info=None):
