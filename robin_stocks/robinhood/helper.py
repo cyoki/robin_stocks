@@ -248,7 +248,7 @@ def request_document(url, payload=None):
     return(res)
 
 
-def request_get(url, dataType='regular', payload=None, jsonify_data=True):
+def request_get(url, dataType='regular', payload=None, jsonify_data=True, num_pages=20):
     """For a given url and payload, makes a get request and returns the data.
 
     :param url: The url to send a get request to.
@@ -309,6 +309,8 @@ def request_get(url, dataType='regular', payload=None, jsonify_data=True):
                 return(data)
             print('Loading page '+str(counter)+' ...', file=get_output())
             counter += 1
+            if counter>num_pages:
+                break
             for item in nextData['results']:
                 data.append(item)
     elif (dataType == 'indexzero'):

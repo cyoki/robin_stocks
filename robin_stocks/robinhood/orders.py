@@ -23,7 +23,7 @@ def get_all_stock_orders(info=None):
 
 
 @login_required
-def get_all_option_orders(info=None):
+def get_all_option_orders(info=None, num_pages=20):
     """Returns a list of all the option orders that have been processed for the account.
 
     :param info: Will filter the results to get a specific value.
@@ -33,7 +33,7 @@ def get_all_option_orders(info=None):
 
     """
     url = option_orders_url()
-    data = request_get(url, 'pagination')
+    data = request_get(url, 'pagination', num_pages)
     return(filter_data(data, info))
 
 
