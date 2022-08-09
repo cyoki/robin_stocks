@@ -33,7 +33,7 @@ def get_all_option_orders(info=None, num_pages=20):
 
     """
     url = option_orders_url()
-    data = request_get(url, 'pagination', num_pages)
+    data = request_get(url, 'pagination', num_pages=num_pages)
     return(filter_data(data, info))
 
 
